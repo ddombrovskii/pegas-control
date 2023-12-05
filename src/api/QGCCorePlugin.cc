@@ -156,7 +156,7 @@ QVariantList &QGCCorePlugin::settingsPages()
                                             QUrl::fromUserInput("qrc:/res/waves.svg"));
         _p->settingsList.append(QVariant::fromValue(reinterpret_cast<QmlComponentInfo*>(_p->pMAVLink)));
         _p->pRemoteID = new QmlComponentInfo(tr("Remote ID"),
-                                            QUrl::fromUserInput("qrc:/qml/RemoteIDSettings.qml"));
+                                             QUrl::fromUserInput("qrc:/qml/RemoteIDSettings.qml"));
         _p->settingsList.append(QVariant::fromValue(reinterpret_cast<QmlComponentInfo*>(_p->pRemoteID)));
         _p->pConsole = new QmlComponentInfo(tr("Console"),
                                             QUrl::fromUserInput("qrc:/qml/QGroundControl/Controls/AppMessages.qml"));
@@ -450,8 +450,8 @@ const QVariantList& QGCCorePlugin::toolBarIndicators(void)
     //-- Default list of indicators for all vehicles.
     if(_toolBarIndicatorList.size() == 0) {
         _toolBarIndicatorList = QVariantList({
-                                                 QVariant::fromValue(QUrl::fromUserInput("qrc:/toolbar/GPSRTKIndicator.qml")),
-                                             });
+            QVariant::fromValue(QUrl::fromUserInput("qrc:/toolbar/GPSRTKIndicator.qml")),
+        });
     }
     return _toolBarIndicatorList;
 }

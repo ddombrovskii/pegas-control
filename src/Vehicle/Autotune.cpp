@@ -11,7 +11,7 @@
 
 #include "QGCApplication.h"
 #include "Autotune.h"
-
+#include "Vehicle.h"
 
 //-----------------------------------------------------------------------------
 Autotune::Autotune(Vehicle *vehicle) :

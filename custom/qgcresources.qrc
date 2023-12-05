@@ -43,6 +43,7 @@
 		<file alias="QGCLogoArrow">../resources/QGCLogoArrow.svg</file>
 		<file alias="QGroundControlConnect">../resources/QGroundControlConnect.svg</file>
 		<file alias="rtl.svg">../resources/rtl.svg</file>
+		<file alias="menuIcon">../resources/menuIcon.svg</file>
 		<file alias="SplashScreen">../resources/SplashScreen.png</file>
 		<file alias="Stop">../resources/Stop.svg</file>
 		<file alias="takeoff.svg">../resources/takeoff.svg</file>
@@ -59,6 +60,7 @@
 		<file alias="GripperRelease.svg">../resources/GripperRelease.svg</file>
 		<file alias="GripperGrab.svg">../resources/GripperGrab.svg</file>
 		<file>../resources/icons/qgroundcontrol.ico</file>
+		<file>../resources/icons/pegas-icon.ico</file>
 	</qresource>
 	<qresource prefix="/res/firmware">
 		<file alias="3drradio.png">../resources/firmware/3drradio.png</file>

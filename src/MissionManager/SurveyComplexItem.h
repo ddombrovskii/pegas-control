@@ -30,11 +30,13 @@ public:
     Q_PROPERTY(Fact*            gridAngle              READ gridAngle              CONSTANT)
     Q_PROPERTY(Fact*            flyAlternateTransects  READ flyAlternateTransects  CONSTANT)
     Q_PROPERTY(Fact*            splitConcavePolygons   READ splitConcavePolygons   CONSTANT)
+    Q_PROPERTY(Fact*            sprayingTankVolume     READ sprayingTankVolume     CONSTANT)
     Q_PROPERTY(QGeoCoordinate   centerCoordinate       READ centerCoordinate       WRITE setCenterCoordinate)
 
     Fact* gridAngle             (void) { return &_gridAngleFact; }
     Fact* flyAlternateTransects (void) { return &_flyAlternateTransectsFact; }
     Fact* splitConcavePolygons  (void) { return &_splitConcavePolygonsFact; }
+    Fact* sprayingTankVolume    (void) { return &_sprayingTankVolumeFact; }
 
     Q_INVOKABLE void rotateEntryPoint(void);
 
@@ -79,6 +81,7 @@ public:
     static const char* gridEntryLocationName;
     static const char* flyAlternateTransectsName;
     static const char* splitConcavePolygonsName;
+    static const char* sprayingTankVolumeName;
 
     static const char* jsonV3ComplexItemTypeValue;
 
@@ -139,12 +142,14 @@ private:
     SettingsFact    _gridAngleFact;
     SettingsFact    _flyAlternateTransectsFact;
     SettingsFact    _splitConcavePolygonsFact;
+    SettingsFact    _sprayingTankVolumeFact;
     int             _entryPoint;
 
     static const char* _jsonGridAngleKey;
     static const char* _jsonEntryPointKey;
     static const char* _jsonFlyAlternateTransectsKey;
     static const char* _jsonSplitConcavePolygonsKey;
+    static const char* _jsonSprayingTankVolumeKey;
 
     static const char* _jsonV3GridObjectKey;
     static const char* _jsonV3GridAltitudeKey;

@@ -141,6 +141,14 @@
     "decimalPlaces":    1
 },
 {
+    "name":             "sprayingCurrentVolume",
+    "shortDesc":        "Spraying Current Volume",
+    "type":             "double",
+    "decimalPlaces":    1,
+    "units":            "л"
+},
+
+{
     "name":             "hobbs",
     "shortDesc": "Hobbs Meter",
     "type":             "string"

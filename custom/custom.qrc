@@ -13,9 +13,10 @@
         <file alias="odometer.svg">res/Images/odometer.svg</file>
         <file alias="vertical_speed.svg">res/Images/vertical_speed.svg</file>
         <file alias="CustomAppIcon.png">res/Images/CustomAppIcon.png</file>
+	<file alias="pegas.jpeg">res/Images/pegas.jpeg</file>
     </qresource>
     <qresource prefix="/qmlimages">
-	<file alias="PaperPlane.svg">res/Images/CustomVehicleIcon.svg</file>
+	<file alias="PaperPlane.svg">res/Images/PaperPlane.svg</file>
     </qresource>
     <qresource prefix="Custom/Widgets">
         <file alias="Custom/Widgets/CustomArtificialHorizon.qml">res/Custom/Widgets/CustomArtificialHorizon.qml</file>

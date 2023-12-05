@@ -24,6 +24,16 @@
     "shortDesc": "Split mission concave polygons into separate regular, convex polygons.",
     "type":             "bool",
     "default":     false
+},
+{
+    "name":             "SprayingTankVolume",
+    "shortDesc": "Spray tank volume",
+    "type":             "double",
+    "units":            "л",
+    "min":              0.0,
+    "max":              30.0,
+    "decimalPlaces":    1,
+    "default":     0
 }
 ]
 }

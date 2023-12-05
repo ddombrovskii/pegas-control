@@ -35,18 +35,18 @@ DEFINES += CUSTOMHEADER=\"\\\"CustomPlugin.h\\\"\"
 DEFINES += CUSTOMCLASS=CustomPlugin
 
 TARGET   = CustomQGroundControl
-DEFINES += QGC_APPLICATION_NAME='"\\\"Custom QGroundControl\\\""'
+DEFINES += QGC_APPLICATION_NAME='"\\\"Pegas Control\\\""'
 
-DEFINES += QGC_ORG_NAME=\"\\\"qgroundcontrol.org\\\"\"
-DEFINES += QGC_ORG_DOMAIN=\"\\\"org.qgroundcontrol\\\"\"
+DEFINES += QGC_ORG_NAME=\"\\\"pegas-agro.ru\\\"\"
+DEFINES += QGC_ORG_DOMAIN=\"\\\"ru.pegas\\\"\"
 
-QGC_APP_NAME        = "Custom QGroundControl"
-QGC_BINARY_NAME     = "CustomQGroundControl"
-QGC_ORG_NAME        = "Custom"
-QGC_ORG_DOMAIN      = "org.custom"
-QGC_ANDROID_PACKAGE = "org.custom.qgroundcontrol"
-QGC_APP_DESCRIPTION = "Custom QGroundControl"
-QGC_APP_COPYRIGHT   = "Copyright (C) 2020 QGroundControl Development Team. All rights reserved."
+QGC_APP_NAME        = "Pegas Control"
+QGC_BINARY_NAME     = "PegasControl"
+QGC_ORG_NAME        = "Pegas"
+QGC_ORG_DOMAIN      = "org.pegas"
+QGC_ANDROID_PACKAGE = "org.pegas.control"
+QGC_APP_DESCRIPTION = "Pegas Control"
+QGC_APP_COPYRIGHT   = "Copyright"
 
 # Our own, custom resources
 RESOURCES += \
@@ -81,4 +81,3 @@ SOURCES += \
     $$PWD/src/AutoPilotPlugin/CustomAutoPilotPlugin.cc \
     $$PWD/src/FirmwarePlugin/CustomFirmwarePlugin.cc \
     $$PWD/src/FirmwarePlugin/CustomFirmwarePluginFactory.cc \
-

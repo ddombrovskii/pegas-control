@@ -52,7 +52,7 @@ LinuxBuild {
 }
 
 WindowsBuild {
-    RC_ICONS = resources/icons/qgroundcontrol.ico
+    RC_ICONS = resources/icons/pegas-icon.ico
     CONFIG += resources_big
 }
 
@@ -68,7 +68,7 @@ QGC_APP_COPYRIGHT   = "Copyright (C) 2019 QGroundControl Development Team. All r
 
 WindowsBuild {
     QGC_INSTALLER_SCRIPT        = "$$SOURCE_DIR\\deploy\\windows\\nullsoft_installer.nsi"
-    QGC_INSTALLER_ICON          = "$$SOURCE_DIR\\deploy\\windows\\WindowsQGC.ico"
+    QGC_INSTALLER_ICON          = "$$SOURCE_DIR\\deploy\\windows\\pegas-icon.ico"
     QGC_INSTALLER_HEADER_BITMAP = "$$SOURCE_DIR\\deploy\\windows\\installheader.bmp"
     QGC_INSTALLER_DRIVER_MSI    = "$$SOURCE_DIR\\deploy\\windows\\driver.msi"
 }

@@ -232,10 +232,51 @@ Rectangle {
                     text:               qsTr("Statistics")
                 }
 
-                TransectStyleComplexItemStats {
+                SprayingItemStats {
                     Layout.fillWidth:   true
                     visible:            presetsStatsHeader.checked
                 }
+            }
+            // Spraying Tab
+            ColumnLayout {
+                Layout.fillWidth:   true
+                spacing:            _margin
+                visible:            tabBar.currentIndex === 4
+
+                QGCLabel {
+                    Layout.fillWidth:   true
+                    text:               qsTr("Настройки распыления")
+                    wrapMode:           Text.WordWrap
+                }
+
+                QGCLabel { text: qsTr("Объём жидкости в баке") }
+
+                FactTextField {
+                    fact:                   missionItem.sprayingTankVolume
+                    Layout.fillWidth:       true
+                    // onUpdated:              sprayVolumeSlider.value = missionItem.gridAngle.value
+                }
+
+                CameraCalcGrid {
+                    Layout.fillWidth:               true
+                    cameraCalc:                     _missionItem.cameraCalc
+                    vehicleFlightIsFrontal:         true
+                    distanceToSurfaceLabel:         qsTr("Высота")
+                    // frontalDistanceLabel:           qsTr("Trigger Dist")
+                    sideDistanceLabel:              qsTr("Ширина")
+                }
+
+                SectionHeader {
+                    id:                 sprayingStatsHeader
+                    Layout.fillWidth:   true
+                    text:               qsTr("Статистика")
+                }
+
+                SprayingItemStats {
+                    Layout.fillWidth:   true
+                    visible:            sprayingStatsHeader.checked
+                }
+
             } // Main editing column
         } // Top level  Column
 
@@ -303,3 +344,4 @@ Rectangle {
         }
     }
 }
+

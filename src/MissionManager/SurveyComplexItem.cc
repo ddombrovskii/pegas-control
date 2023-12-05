@@ -22,7 +22,7 @@
 
 QGC_LOGGING_CATEGORY(SurveyComplexItemLog, "SurveyComplexItemLog")
 
-const QString SurveyComplexItem::name(SurveyComplexItem::tr("Survey"));
+const QString SurveyComplexItem::name(SurveyComplexItem::tr("Агросценарий"));
 
 const char* SurveyComplexItem::jsonComplexItemTypeValue =   "survey";
 const char* SurveyComplexItem::jsonV3ComplexItemTypeValue = "survey";
@@ -32,9 +32,11 @@ const char* SurveyComplexItem::gridAngleName =              "GridAngle";
 const char* SurveyComplexItem::gridEntryLocationName =      "GridEntryLocation";
 const char* SurveyComplexItem::flyAlternateTransectsName =  "FlyAlternateTransects";
 const char* SurveyComplexItem::splitConcavePolygonsName =   "SplitConcavePolygons";
+const char* SurveyComplexItem::sprayingTankVolumeName =     "SprayingTankVolume";
 
 const char* SurveyComplexItem::_jsonGridAngleKey =          "angle";
 const char* SurveyComplexItem::_jsonEntryPointKey =         "entryLocation";
+const char* SurveyComplexItem::_jsonSprayingTankVolumeKey = "liter";
 
 const char* SurveyComplexItem::_jsonV3GridObjectKey =                   "grid";
 const char* SurveyComplexItem::_jsonV3GridAltitudeKey =                 "altitude";
@@ -71,6 +73,7 @@ SurveyComplexItem::SurveyComplexItem(PlanMasterController* masterController, boo
     , _flyAlternateTransectsFact(settingsGroup, _metaDataMap[flyAlternateTransectsName])
     , _splitConcavePolygonsFact (settingsGroup, _metaDataMap[splitConcavePolygonsName])
     , _entryPoint               (EntryLocationTopLeft)
+    , _sprayingTankVolumeFact   (settingsGroup, _metaDataMap[sprayingTankVolumeName])
 {
     _editorQml = "qrc:/qml/SurveyItemEditor.qml";
 
@@ -94,6 +97,7 @@ SurveyComplexItem::SurveyComplexItem(PlanMasterController* masterController, boo
     connect(&_gridAngleFact,            &Fact::valueChanged,                        this, &SurveyComplexItem::_setDirty);
     connect(&_flyAlternateTransectsFact,&Fact::valueChanged,                        this, &SurveyComplexItem::_setDirty);
     connect(&_splitConcavePolygonsFact, &Fact::valueChanged,                        this, &SurveyComplexItem::_setDirty);
+    connect(&_sprayingTankVolumeFact,   &Fact::valueChanged,                        this, &SurveyComplexItem::_setDirty);
     connect(this,                       &SurveyComplexItem::refly90DegreesChanged,  this, &SurveyComplexItem::_setDirty);
 
     connect(&_gridAngleFact,            &Fact::valueChanged,                        this, &SurveyComplexItem::_rebuildTransects);
@@ -137,6 +141,7 @@ void SurveyComplexItem::_saveCommon(QJsonObject& saveObject)
     saveObject[_jsonGridAngleKey] =                             _gridAngleFact.rawValue().toDouble();
     saveObject[_jsonFlyAlternateTransectsKey] =                 _flyAlternateTransectsFact.rawValue().toBool();
     saveObject[_jsonSplitConcavePolygonsKey] =                  _splitConcavePolygonsFact.rawValue().toBool();
+    saveObject[_jsonSprayingTankVolumeKey] =                    _sprayingTankVolumeFact.rawValue().toDouble();
     saveObject[_jsonEntryPointKey] =                            _entryPoint;
 
     // Polygon shape
@@ -209,6 +214,7 @@ bool SurveyComplexItem::_loadV4V5(const QJsonObject& complexObject, int sequence
         { _jsonEntryPointKey,                           QJsonValue::Double, true },
         { _jsonGridAngleKey,                            QJsonValue::Double, true },
         { _jsonFlyAlternateTransectsKey,                QJsonValue::Bool,   false },
+        { _jsonSprayingTankVolumeKey,                QJsonValue::Double,   true },
     };
 
     if(version == 5) {
