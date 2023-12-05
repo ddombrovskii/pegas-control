@@ -34,7 +34,7 @@ CONFIG  += QGC_DISABLE_PX4_PLUGIN_FACTORY
 DEFINES += CUSTOMHEADER=\"\\\"CustomPlugin.h\\\"\"
 DEFINES += CUSTOMCLASS=CustomPlugin
 
-TARGET   = CustomQGroundControl
+TARGET   = PegasControl
 DEFINES += QGC_APPLICATION_NAME='"\\\"Pegas Control\\\""'
 
 DEFINES += QGC_ORG_NAME=\"\\\"pegas-agro.ru\\\"\"
